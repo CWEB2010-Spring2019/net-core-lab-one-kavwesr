@@ -1,0 +1,69 @@
+///W. Kavanagh
+
+//Using Statements 
+	using system;
+	
+
+START //Start of the main method  
+
+	Declarations
+	// Declaring an array that holds correctAnswers
+	string correctAnswers[10] = {"B" ,"B", "C", "A", "D", "A", "A", "C", "D", "A"};
+	
+	// An array for end-users selection
+	String userSelections[10];
+	
+	//Declare an array that holds the questions
+	string quizQuestions[10] = {"questions ....", "etc...", "etc..", through [10]};
+	
+	//Declare a Multidemensional array that holds options for each questions
+	string[,] quizAnswerOptions =  new string[,] {
+										{"A) 2019", "B) 2014", "C) 2003", "D)1990"},
+										{},
+										{},
+										{},
+										{},
+										{},
+										{},
+										{},
+										{},
+										{},										
+									  {
+									  
+	string selection;
+	int start;
+	int EXIT = -1;
+	
+	List<string> correct = new List<string>();
+	List<string> wrong = new List<string>();
+	
+	
+	Console.WriteLine( "Welcome, this program will assess your knowledge of .NET Core");
+	Console.WriteLine("To get started, please enter a number other than -1(press enter) to start the program");
+	Start = Convert.ToInt32(Console.ReadLine());
+	
+	WHILE(start != EXIT){
+		
+		for(num x=0; x< quizQuestions.Length; x++;){
+		
+			Console.WriteLine(quizQuestions[x]);
+			for(i=0; i < quizQuestionOptions.GetLength(1); i++){
+				Console.WriteLine(quizAnswerOptions[x,i]);
+				
+			}
+			Console.WriteLine( "Please enter an options");
+			selection = Console.ReadLine();
+			userSelections[x] = selection;
+			
+			//Determine if the user's selection is the correct answers
+			if(selection == correctAnswers[x]){
+				correct.Add(selection)
+			}else{ 
+				wrong.Add(selection)
+			}
+		}
+		Console.WriteLine("To take the quiz again, enter anything other than -1. To exit enter -1");
+		start = Convert.ToInt32(Console.ReadLine());
+	}//ENDWHILE
+	
+STOP //End of the main method
