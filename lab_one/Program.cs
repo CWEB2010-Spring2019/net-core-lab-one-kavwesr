@@ -16,31 +16,30 @@ namespace lab_one
             String[] userSelections = new string[] { };
 
             //Declare an array that holds the questions
-            string[] quizQuestions = { "questions ....",
-                                        "etc...",
-                                        "etc..",
-                                        "",
-                                        "",
-                                        "",
-                                        "",
-                                        "",
-                                        "",
-                                        "" };
+            string[] quizQuestions = { "What company supports .NET Core?",
+                                        "What is the current version of .NET Core?",
+                                        "When was .NET Core released?",
+                                        "What is CoreCLR?",
+                                        "What platform is compatible with .NET Core?",
+                                        "What is the difference betweeen .NET Core and Mono?",
+                                        "What's the difference between .NET Core, .NET Framework, and Xamarin?",
+                                        ".NET Core is an ____________ framework.",
+                                        "What languages can be used to write applications and libraries for .NET Core.",
+                                        "Every command in .NET Core command line interface starts with _________." };
 
             //Declare a Multidemensional array that holds options for each questions
             string[,] quizAnswerOptions = new string[,] {
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
-                                        {"A) ", "B) ", "C) ", "D) "},
+                                        {"A) VMware", "B) Microsoft", "C) Symantec", "D) Oracle" },
+                                        {"A) 1.0", "B) 2.2", "C) 10.0", "D) 3.0"},
+                                        {"A) 2019", "B) 2004", "C) 2014", "D) 2017"},
+                                        {"A) A complete runtime implementation of the Common Language Runtime", "B) A household cleaning product", "C) The method to clear the console screen", "D) The company that runs Visual Studio"},
+                                        {"A) Windows", "B) macOS", "C) Linux", "D) All of the above"},
+                                        {"A) Mono is a 3rd party implementation of the .Net Framework", "B) Mono is not cross platform", "C) They are the same", "D) Mono is not open source"},
+                                        {"A) All are correct", "B) .NET Framework is the 'full' or 'traditional' flavor of .NET that's distributed with Windows.", "C) .NET Core is cross-platform .NET that runs on Windows, Mac, and Linux.", "D) Xamarin is used for building mobile apps that can run on iOS, Android, or Windows Phone devices."},
+                                        {"A) Licensed", "B) Obsolete", "C) Open-Sourced", "D) UI"},
+                                        {"A) C#", "B) Visual Basic", "C) F#", "D) All of the above"},
+                                        {"A) dotnet", "B) .net", "C) core", "D) aspdotnet"},
+                                        
             };
 
             string selection;
@@ -57,17 +56,16 @@ namespace lab_one
 
             while(start != EXIT){
 
-                for(int x = 0; x < quizQuestions.Length; x++)
+                for(int x = 0; x < quizQuestions.Length; x++) 
                 {
 
 
                     Console.WriteLine(quizQuestions[x]);
-                    for (int i = 0; i < quizAnswerOptions.GetLength(1); i++)
-                    {
+                    for (int i = 0; i < quizAnswerOptions.GetLength(1); i++){
                         Console.WriteLine(quizAnswerOptions[x, i]);
 
                     }
-                    Console.WriteLine("Please enter an options");
+                    Console.WriteLine("Please enter an option");
                     selection = Console.ReadLine().ToUpper();
                     userSelections[x] = selection;
 
@@ -79,10 +77,15 @@ namespace lab_one
                     }
                     else
                     {
-                        wrong.Add(selection);
+                        wrong.Add("Question: " + (x + 1) + ") " + selection);
        
                     };
-                    Console.WriteLine("You answered " + correct.Count + " correct out of " + quizQuestions.Length);
+                    Console.Clear();
+                } // End outer For Loop
+
+                Console.WriteLine("Press any key for your results");
+                Console.ReadKey();
+                Console.WriteLine("You answered " + correct.Count + " correct out of " + quizQuestions.Length);
                     // Determine if they passed
                     var results = (correct.Count >= 7) ? "You passed the assessment" : "You didn't pass";
 
@@ -93,16 +96,18 @@ namespace lab_one
                         wrong.ForEach(w => { Console.WriteLine(w); });
                     }
 
-                    wrong.Clear();
-                    correct.Clear();
-                }
+                    
+               
+                wrong.Clear();
+                correct.Clear();
                 Console.WriteLine("To take the quiz again, enter anything other than -1. To exit enter -1");
                 start = Convert.ToInt32(Console.ReadLine());
 
             }//ENDWHILE
+
             Outro();
 
-        } // Endo of main
+        } // End of main
 
   
         static int Welcome()
