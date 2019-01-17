@@ -44,7 +44,7 @@ namespace lab_one
 
             string selection;
             int start;
-            int EXIT = -1; // Sentinal Value
+            int EXIT = 999; // Sentinal Value
 
             List<string> correct = new List<string>();
             List<string> wrong = new List<string>();
@@ -53,7 +53,7 @@ namespace lab_one
             // End of Declarations 
 
             start = Welcome();
-
+            Console.Clear();
             while(start != EXIT){
 
                 for(int x = 0; x < quizQuestions.Length; x++) 
@@ -117,7 +117,7 @@ namespace lab_one
                
                 wrong.Clear();
                 correct.Clear();
-                Console.WriteLine("To take the quiz again, enter anything other than -1. To exit enter -1");
+                Console.WriteLine("To take the quiz again, enter anything other than 999. To exit enter 999");
                 start = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
 
@@ -132,7 +132,7 @@ namespace lab_one
         {
             int start;
             Console.WriteLine("Welcome, this program will assess your knowledge of .NET Core");
-            Console.WriteLine("To get started, please enter a number other than -1 to start the program");
+            Console.WriteLine("To get started, please enter a number other than 999 to start the program");
             start = Convert.ToInt32(Console.ReadLine());
             return start;
         } // End of Welcome
