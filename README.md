@@ -1,4 +1,4 @@
-# .NET Core Quiz Program (Lab 1 - 5pts.)
+# .NET Core Quiz Program
 ### By: Weslee Kavanagh
 
 ## Overview
