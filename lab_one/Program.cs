@@ -13,7 +13,7 @@ namespace lab_one
             string[] correctAnswers = new string[] { "B", "B", "C", "A", "D", "A", "A", "C", "D", "A" };
 
             // An array for end-users selection
-            String[] userSelections = new string[] { };
+            String[] userSelections = new string[10] ;
 
             //Declare an array that holds the questions
             string[] quizQuestions = { "What company supports .NET Core?",
@@ -86,10 +86,12 @@ namespace lab_one
                 Console.WriteLine("Press any key for your results");
                 Console.ReadKey();
                 Console.WriteLine("You answered " + correct.Count + " correct out of " + quizQuestions.Length);
-                    // Determine if they passed
-                    var results = (correct.Count >= 7) ? "You passed the assessment" : "You didn't pass";
 
-                    // Output the questions they got wrong.
+                // Determine if they passed
+                var results = (correct.Count >= 7) ? "You passed the assessment" : "You didn't pass";
+                Console.WriteLine(results);
+
+                // Output the questions they got wrong.
                     if (wrong.Count > 0)
                     {
                         Console.WriteLine("These are the questions you got wrong");
