@@ -88,8 +88,23 @@ namespace lab_one
                 Console.WriteLine("You answered " + correct.Count + " correct out of " + quizQuestions.Length);
 
                 // Determine if they passed
-                var results = (correct.Count >= 7) ? "You passed the assessment" : "You didn't pass";
-                Console.WriteLine(results);
+                //var results = (correct.Count >= 7) ? "You passed the assessment" : "You didn't pass";
+                int results = correct.Count;
+
+                if(results >= 7)
+                {
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("You passed the assesment");
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine("You didn't pass");
+                }
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
 
                 // Output the questions they got wrong.
                     if (wrong.Count > 0)
@@ -104,6 +119,7 @@ namespace lab_one
                 correct.Clear();
                 Console.WriteLine("To take the quiz again, enter anything other than -1. To exit enter -1");
                 start = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
 
             }//ENDWHILE
 
@@ -124,9 +140,9 @@ namespace lab_one
 
         static void Outro()
         {
-            Console.WriteLine("Program concluded");
-            Console.WriteLine("Press Any Key to Exit");
-            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("Program concluded, press any key to exit.");
+            
         } // End of Outro
     }
 }
