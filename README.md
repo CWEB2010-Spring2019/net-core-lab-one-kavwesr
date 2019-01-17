@@ -3,7 +3,7 @@
 
 ## Overview
 
-This program is a quiz on the topic of .NET Core. Built by Weslee Kavanagh, for CWEB2010. The user will input a numeric to begin the quiz. The quiz consissts of 10 questions about .NET Core. At the end of the quiz, the program will register the amount of questions that match the stored questions in the correctAnswers[] array. Depending if the user gets 70% or higher on the quiz, the program will tell the user if they passed, or failed. If the user wishes to retake the quiz they can enter another numeric digit. Otherwise, if the user wishes to close the program they can enter the sentinal value of 999, to exit. 
+This program is a quiz on the topic of .NET Core. Built by Weslee Kavanagh, for CWEB2010. The user will input a numeric to begin the quiz. The quiz consists of 10 questions about .NET Core. At the end of the quiz, the program will register the amount of questions that match the stored questions in the correctAnswers[] array. Depending if the user gets 70% or higher on the quiz, the program will tell the user if they passed, or failed. If the user wishes to retake the quiz they can enter another numeric digit. Otherwise, if the user wishes to close the program they can enter the sentinal value of 999, to exit. 
 
 ## Instructions
 
