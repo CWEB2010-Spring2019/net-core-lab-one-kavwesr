@@ -12,3 +12,8 @@ This program is a quiz on the topic of .NET Core. Built by Weslee Kavanagh, for 
 * Take the quiz
 * If you wish to retake the quiz, enter a number 1-9 again
 * If you wish to close the quiz and end the program enter "999" to close.
+
+## Technical Specs
+
+* .NET Core Console Application
+* Written in C#
